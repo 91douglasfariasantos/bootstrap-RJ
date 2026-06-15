@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Projeto Bootstrap</title>
+    <style>
+        /* Apenas o necessário */
+        body {
+            background-color: rgba(227, 242, 253, 0.5);
+        }
+
+        .carousel-item img {
+            opacity: 0.7;
+        }
+
+        .carousel-item img:hover {
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .carousel-inner {
+            height: 400px;
+        }
+
+        .carousel-item {
+            height: 100%;
+        }
+
+        .carousel-item img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-container iframe {
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR COM BOOTSTRAP -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#">🏖️ Rio de Janeiro</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#media">Galeria</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre">Sobre</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Categorias
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Praias</a></li>
+                            <li><a class="dropdown-item" href="#">Montanhas</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Eventos</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SEÇÃO PRINCIPAL COM BOOTSTRAP GRID -->
+    <section id="media" class="py-5">
+        <div class="container">
+            <!-- Título com Bootstrap -->
+            <h1 class="text-center mb-5 display-4 fw-bold text-primary">Conheça o Rio de Janeiro</h1>
+            
+            <!-- ROW E COLUNAS (GRID BOOTSTRAP) -->
+            <div class="row g-4 justify-content-center align-items-center">
+                <!-- COLUNA 1: VÍDEO -->
+                <div class="col-12 col-md-5">
+                    <h3 class="text-center mb-4 h4">Vídeo</h3>
+                    <div class="ratio ratio-16x9 rounded shadow">
+                        <iframe 
+                            src="https://www.youtube.com/embed/iNfEAJVVY10"
+                            title="Vídeo do YouTube"
+                            allowfullscreen="">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- COLUNA 2: CARROSSEL -->
+                <div class="col-12 col-md-5">
+                    <h3 class="text-center mb-4 h4">Galeria</h3>
+                    <div id="carouselBootstrap" class="carousel slide shadow rounded" data-bs-ride="carousel" data-bs-interval="4000">
+                        <!-- INDICADORES DO CARROSSEL -->
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselBootstrap" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                            <button type="button" data-bs-target="#carouselBootstrap" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#carouselBootstrap" data-bs-slide-to="2"></button>
+                        </div>
+
+                        <!-- ITENS DO CARROSSEL -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="./imagens/praia.jpg" class="d-block w-100" alt="Praia">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./imagens/imagem 1.jpg" class="d-block w-100" alt="Imagem 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./imagens/cristo.jpg" class="d-block w-100" alt="Cristo Redentor">
+                            </div>
+                        </div>
+
+                        <!-- BOTÕES DO CARROSSEL -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselBootstrap" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselBootstrap" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Próximo</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO SOBRE COM BOOTSTRAP CARDS -->
+    <section id="sobre" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 display-5 fw-bold">Belezas Naturais</h2>
+
+            <!-- GRID COM CARDS BOOTSTRAP -->
+            <div class="row g-4">
+                <!-- CARD 1 -->
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">🏖️ Praias</h5>
+                            <p class="card-text">Descubra as mais belas praias do Rio de Janeiro com águas cristalinas e areia branca.</p>
+                            <a href="#" class="btn btn-primary btn-sm">Saiba mais</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title text-success">⛰️ Montanhas</h5>
+                            <p class="card-text">Visite as serras e morros com vista panorâmica da cidade e da baía.</p>
+                            <a href="#" class="btn btn-success btn-sm">Saiba mais</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title text-info">🎭 Cultura</h5>
+                            <p class="card-text">Experimente a rica cultura e tradições do Rio de Janeiro.</p>
+                            <a href="#" class="btn btn-info btn-sm">Saiba mais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER COM BOOTSTRAP -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold">Rio de Janeiro</h5>
+                    <p>Conheça a cidade maravilhosa.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold">Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50 text-decoration-none">Galeria</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Sobre</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold">Redes Sociais</h5>
+                    <p>
+                        <a href="#" class="btn btn-outline-light btn-sm me-2">Facebook</a>
+                        <a href="#" class="btn btn-outline-light btn-sm">Instagram</a>
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <p class="text-center text-white-50 mb-0">&copy; 2026 Rio de Janeiro. Todos os direitos reservados Douglas.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
